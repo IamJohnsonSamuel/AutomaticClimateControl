@@ -22,11 +22,12 @@ add_executable(
     AutoClimateContrl.cpp
     TempCalculator.cpp
     TemperatureRegulator.cpp
-    AutoTest.cc
+    AutoClimateControl.Tests.cc
 )
 target_link_libraries(
     climatecontrl_test
     GTest::gtest_main
+    gmock_main
 )
 
 include(GoogleTest)

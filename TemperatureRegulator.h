@@ -1,8 +1,8 @@
 #include "iostream"
-
+#include "ITempRegulator.h"
 #ifndef __TEMP_REGULATOR__
 #define __TEMP_REGULATOR__
-class TemperatureRegulator
+class TemperatureRegulator : public ITemperatureRegulator
 {
 private:
     int currentTemp;

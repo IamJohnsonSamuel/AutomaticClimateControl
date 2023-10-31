@@ -1,13 +1,12 @@
 #include "AutoClimateControl.h"
-#include "TemperatureRegulator.h"
-#include "TempCalculator.h"
 
 void AutoClimateControl::on()
 {
     autoClimateControlAvail = 1;
 
-    int currentTemp = tempCalcObj.getTemperature();
-    tempRegObj.regulate(currentTemp);
+    int currentTemp = tempCalcObj->getTemperature();
+    currentTemp = 10;
+    tempRegObj->regulate(currentTemp);
 }
 
 void AutoClimateControl::off()
@@ -19,4 +18,10 @@ int AutoClimateControl::getautoClimateControlAvail()
 {
 
     return 1;
+}
+
+AutoClimateControl::AutoClimateControl(ITempCalculator *CalcObj, ITemperatureRegulator *RegObj)
+{
+    tempCalcObj = CalcObj;
+    tempRegObj = RegObj;
 }

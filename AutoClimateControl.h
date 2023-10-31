@@ -1,15 +1,16 @@
 #include "iostream"
-#include "TempCalculator.h"
-#include "TemperatureRegulator.h"
+#include "ITempCalculator.h"
+#include "ITempRegulator.h"
 
 class AutoClimateControl
 {
 private:
     int autoClimateControlAvail;
-    TempCalculator tempCalcObj;
-    TemperatureRegulator tempRegObj;
+    ITempCalculator *tempCalcObj;
+    ITemperatureRegulator *tempRegObj;
 
 public:
+    AutoClimateControl(ITempCalculator *tempCalcObj, ITemperatureRegulator *tempRegObj);
     void on();
     void off();
     void setautoClimateControlAvail(int value);

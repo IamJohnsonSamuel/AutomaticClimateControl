@@ -1,5 +1,6 @@
 
 #include "iostream"
+#include "ITempCalculator.h"
 
 #ifndef __TEMP_CALCULATOR__
 #define __TEMP_CALCULATOR__
@@ -18,7 +19,7 @@ public:
     int getOccupancyCount();
 };
 
-class TempCalculator
+class TempCalculator : public ITempCalculator
 {
 private:
     OutsideTemp outsideTempObj;
