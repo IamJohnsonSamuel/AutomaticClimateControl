@@ -18,16 +18,16 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-    hello_test
+    climatecontrl_test
     AutoClimateContrl.cpp
     TempCalculator.cpp
     TemperatureRegulator.cpp
     AutoTest.cc
 )
 target_link_libraries(
-    hello_test
+    climatecontrl_test
     GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(climatecontrl_test)
