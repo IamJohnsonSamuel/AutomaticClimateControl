@@ -4,6 +4,7 @@
 #include <gmock/gmock-matchers.h>
 using testing::_;
 using testing::Eq;
+using testing::Return;
 
 class MockTempCalculator : public ITempCalculator
 {
@@ -24,7 +25,7 @@ TEST(AutoClimateControlTest, onTest)
     MockTempCalculator mocTempCalcObj;
     MockTemperatureRegulator mockTempRegObj;
     AutoClimateControl objUnderTest(&mocTempCalcObj, &mockTempRegObj);
-    EXPECT_CALL(mocTempCalcObj, getTemperature()).Times(1);
+    EXPECT_CALL(mocTempCalcObj, getTemperature()).Times(1).WillOnce(Return(100));
     EXPECT_CALL(mockTempRegObj, regulate(Eq(100))).Times(1);
     // Act
     objUnderTest.on();

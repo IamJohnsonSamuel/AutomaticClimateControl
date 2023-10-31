@@ -5,7 +5,6 @@ void AutoClimateControl::on()
     autoClimateControlAvail = 1;
 
     int currentTemp = tempCalcObj->getTemperature();
-    currentTemp = 10;
     tempRegObj->regulate(currentTemp);
 }
 
